@@ -1,0 +1,12 @@
+-- Break gold pots with God Pickaxe in Booga Booga Reborn
+while wait(0.1) do
+    if game.Players.LocalPlayer.Character:FindFirstChild("GodPickaxe") then
+        for _, v in pairs(game.Workspace:GetChildren()) do
+            if v.Name == "Pot of gold" or v.Name == "Mega Pot of gold" or v.Name == "Golden Pot of gold" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                wait(0.1)
+                game.ReplicatedStorage.Remotes.UseTool:FireServer(v)
+            end
+        end
+    end
+end
